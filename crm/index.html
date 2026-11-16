@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a1830">
+  <title>CRM · Україна — Європа</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="crm.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="app.js"></script>
+</head>
+<body class="crm-body">
+  <div class="login-screen" id="login-screen">
+    <div class="login-visual">
+      <div class="login-brand"><div class="brand-mark">UA<span>→</span>EU</div><div><b>УКРАЇНА — ЄВРОПА</b><small>ПАСАЖИРСЬКІ ПЕРЕВЕЗЕННЯ</small></div></div>
+      <div class="login-copy"><span class="eyebrow">ПАНЕЛЬ УПРАВЛІННЯ</span><h1>Усі поїздки.<br><em>Під контролем.</em></h1><p>Єдиний робочий простір для заявок, клієнтів, маршрутів і рейсів.</p></div>
+      <div class="login-visual-foot"><span>● СИСТЕМА УПРАВЛІННЯ ПЕРЕВЕЗЕННЯМИ</span><span>UA — EU · CRM</span></div>
+    </div>
+    <div class="login-panel">
+      <form class="login-card" id="login-form">
+        <div class="login-icon">↗</div>
+        <span class="eyebrow">РАДІ БАЧИТИ ВАС ЗНОВУ</span>
+        <h2>Вхід у CRM</h2>
+        <p class="muted">Увійдіть, щоб керувати бронюваннями та операційними процесами.</p>
+        <label class="control"><span>Логін</span><input type="text" name="username" autocomplete="username" placeholder="test" required></label>
+        <label class="control"><span>Пароль</span><input type="password" name="password" autocomplete="current-password" placeholder="test" required></label>
+        <div class="demo-hint">Доступ для перегляду: <b>test</b> / <b>test</b></div>
+        <button class="primary-btn full" type="submit" id="login-submit">Увійти до системи <span>→</span></button>
+        <div class="login-error" id="login-error" role="alert"></div>
+        <div class="login-secure"><span>◇</span> Захищений доступ для команди перевізника</div>
+      </form>
+      <div class="login-panel-foot">© <span id="login-year"></span> Україна — Європа</div>
+    </div>
+  </div>
+
+  <div class="app-shell is-hidden" id="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="side-brand" href="/" aria-label="На сайт">
+        <div class="brand-mark">UA<span>→</span>EU</div>
+        <div><b>УКРАЇНА — ЄВРОПА</b><small>CRM WORKSPACE</small></div>
+      </a>
+      <div class="side-divider"></div>
+      <div class="side-label">РОБОЧИЙ ПРОСТІР</div>
+      <nav class="side-nav" id="side-nav">
+        <button class="nav-item is-active" data-view="dashboard"><span class="nav-symbol">▦</span> Огляд <kbd>01</kbd></button>
+        <button class="nav-item" data-view="bookings"><span class="nav-symbol">▤</span> Бронювання <kbd id="new-bookings-count">0</kbd></button>
+        <button class="nav-item" data-view="finances"><span class="nav-symbol">₴</span> Фінанси</button>
+        <button class="nav-item" data-view="trips"><span class="nav-symbol">↗</span> Рейси</button>
+        <button class="nav-item" data-view="routes"><span class="nav-symbol">⌖</span> Маршрути</button>
+        <button class="nav-item" data-view="customers"><span class="nav-symbol">♙</span> Клієнти</button>
+        <div class="side-label side-label--spaced">РЕСУРСИ</div>
+        <button class="nav-item" data-view="vehicles"><span class="nav-symbol">▰</span> Транспорт</button>
+        <button class="nav-item" data-view="drivers"><span class="nav-symbol">♧</span> Водії</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="support-card"><span class="support-orb">✦</span><b>Потрібна допомога?</b><small>Технічний супровід проєкту</small><span class="support-note">Команда підтримки BotForge</span></div>
+        <div class="side-user"><div class="avatar" id="user-avatar">М</div><div class="side-user-info"><b id="user-name">Менеджер</b><small id="user-role">Команда</small></div><button class="logout-icon" id="logout-btn" title="Вийти із системи">↪</button></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Відкрити меню" aria-expanded="false" aria-controls="sidebar">☰</button>
+        <div class="breadcrumbs"><span>UA — EU</span><i>/</i><b id="breadcrumb-title">Огляд</b></div>
+        <div class="topbar-actions">
+          <span class="system-live"><i></i> Система активна</span>
+          <button class="icon-btn" id="refresh-btn" title="Оновити дані">↻</button>
+          <div class="topbar-date" id="topbar-date"></div>
+        </div>
+      </header>
+      <div class="view-wrap">
+        <div class="config-warning is-hidden" id="config-warning"></div>
+        <div class="view-heading">
+          <div><div class="eyebrow" id="view-kicker">КОНТРОЛЬ БІЗНЕСУ</div><h1 id="view-title">Огляд</h1><p id="view-description">Ключові показники та останні події у вашій системі.</p></div>
+          <div class="heading-actions" id="heading-actions"></div>
+        </div>
+        <section id="view-content" aria-live="polite"><div class="loading-state"><span class="spinner"></span> Завантаження даних…</div></section>
+      </div>
+      <footer class="app-footer"><span>UA — EU · CRM</span><span>Операційна система перевізника</span><span id="footer-version">Version 1.0</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop is-hidden" id="modal-backdrop">
+    <div class="modal-card" id="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-head"><div><span class="eyebrow" id="modal-kicker">КЕРУВАННЯ</span><h2 id="modal-title">Нова заявка</h2></div><button class="modal-close" id="modal-close" aria-label="Закрити">×</button></div>
+      <form id="modal-form"><div class="modal-body" id="modal-body"></div><div class="modal-actions" id="modal-actions"><button type="button" class="ghost-btn" id="modal-cancel">Скасувати</button><button type="submit" class="primary-btn" id="modal-save">Зберегти зміни <span>→</span></button></div></form>
+    </div>
+  </div>
+  <div class="toast-region" id="toast-region" aria-live="polite"></div>
+</body>
+</html>
