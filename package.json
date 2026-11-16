@@ -4,13 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vercel dev",
+    "dev": "npx vercel dev",
     "check": "node --check script.js && node --check crm/app.js && node --check api/config.js && node --check api/routes.js && node --check api/bookings.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4"
-  },
-  "devDependencies": {
-    "vercel": "^48.0.0"
   }
 }
