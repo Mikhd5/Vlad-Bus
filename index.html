@@ -2,93 +2,97 @@
 <html lang="uk">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a1830">
-  <title>CRM · Україна — Європа</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07172d">
+  <meta name="description" content="Міжнародні пасажирські перевезення Україна — Європа. Залиште заявку на поїздку.">
+  <title>Україна — Європа | Пасажирські перевезення</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="crm.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script defer src="app.js"></script>
+  <link rel="stylesheet" href="/styles.css">
 </head>
-<body class="crm-body">
-  <div class="login-screen" id="login-screen">
-    <div class="login-visual">
-      <div class="login-brand"><div class="brand-mark">UA<span>→</span>EU</div><div><b>УКРАЇНА — ЄВРОПА</b><small>ПАСАЖИРСЬКІ ПЕРЕВЕЗЕННЯ</small></div></div>
-      <div class="login-copy"><span class="eyebrow">ПАНЕЛЬ УПРАВЛІННЯ</span><h1>Усі поїздки.<br><em>Під контролем.</em></h1><p>Єдиний робочий простір для заявок, клієнтів, маршрутів і рейсів.</p></div>
-      <div class="login-visual-foot"><span>● СИСТЕМА УПРАВЛІННЯ ПЕРЕВЕЗЕННЯМИ</span><span>UA — EU · CRM</span></div>
-    </div>
-    <div class="login-panel">
-      <form class="login-card" id="login-form">
-        <div class="login-icon">↗</div>
-        <span class="eyebrow">РАДІ БАЧИТИ ВАС ЗНОВУ</span>
-        <h2>Вхід у CRM</h2>
-        <p class="muted">Увійдіть, щоб керувати бронюваннями та операційними процесами.</p>
-        <label class="control"><span>Логін</span><input type="text" name="username" autocomplete="username" placeholder="test" required></label>
-        <label class="control"><span>Пароль</span><input type="password" name="password" autocomplete="current-password" placeholder="test" required></label>
-        <div class="demo-hint">Доступ для перегляду: <b>test</b> / <b>test</b></div>
-        <button class="primary-btn full" type="submit" id="login-submit">Увійти до системи <span>→</span></button>
-        <div class="login-error" id="login-error" role="alert"></div>
-        <div class="login-secure"><span>◇</span> Захищений доступ для команди перевізника</div>
+<body>
+  <div class="topline"><div class="container topline__inner">
+    <span><i class="status-dot"></i> Міжнародні пасажирські перевезення</span>
+    <div class="topline__contacts"><a href="tel:+380979327977">+380 97 932 79 77</a><span class="topline__divider"></span><a href="tel:+380637022336">+380 63 702 23 36</a></div>
+  </div></div>
+  <header class="header" id="top"><div class="container header__inner">
+    <a class="brand" href="#top" aria-label="На головну"><span class="brand__mark brand__mark--image"><img src="/cheetah-mark.png" alt=""></span><span class="brand__text"><strong>УКРАЇНА <em>—</em> ЄВРОПА</strong><small>ПАСАЖИРСЬКІ ПЕРЕВЕЗЕННЯ</small></span></a>
+    <button class="menu-toggle" aria-label="Відкрити меню" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+    <nav class="nav" id="main-nav"><a href="#directions">Напрямки</a><a href="#fleet">Транспорт</a><a href="#advantages">Переваги</a><a href="#about">Про нас</a><a href="#contacts">Контакти</a><a class="button button--small button--gold nav__cta" href="#booking">Залишити заявку <span>↗</span></a></nav>
+  </div></header>
+  <main>
+    <section class="hero"><div class="container">
+      <div class="hero__content"><div class="eyebrow"><span></span> ВАШ МАРШРУТ ДО ЄВРОПИ</div>
+        <h1>Подорожуйте<br><span>з комфортом</span></h1>
+        <p class="hero__lead">Міжнародні пасажирські перевезення між Україною та країнами Європи. Оберіть напрямок і залиште заявку — ми зв’яжемося з вами для узгодження деталей.</p>
+        <div class="hero__actions"><a class="button button--gold" href="#booking">Залишити заявку <span>↗</span></a><a class="button button--ghost" href="tel:+380979327977"><span class="phone-icon">⌕</span> Зателефонувати</a></div>
+        <div class="hero__facts"><div><strong>24/7</strong><span>можливість залишити заявку</span></div><div><strong>8 / 50</strong><span>місць у різних типах транспорту</span></div><div><strong>Європа</strong><span>міжнародні напрямки</span></div></div>
+      </div>
+      <div class="hero__visual"><img src="/routes-panorama.webp" alt="Міжнародні пасажирські перевезення Україна — Європа" fetchpriority="high"><div class="visual-label"><span class="visual-label__spark">✦</span><span><strong>Україна — Європа</strong><small>Комфортна дорога починається тут</small></span></div></div>
+    </div><div class="hero__glow"></div></section>
+    <section class="quick-strip" aria-label="Переваги"><div class="container quick-strip__grid">
+      <div class="quick-item"><span class="quick-item__icon">✧</span><span><strong>Досвідчені водії</strong><small>Комфорт і безпека в дорозі</small></span></div>
+      <div class="quick-item"><span class="quick-item__icon">❄</span><span><strong>Клімат-контроль</strong><small>Комфорт у салоні</small></span></div>
+      <div class="quick-item"><span class="quick-item__icon">▦</span><span><strong>Безкоштовне бронювання</strong><small>Зручна онлайн-заявка</small></span></div>
+      <div class="quick-item"><span class="quick-item__icon">⌁</span><span><strong>Wi-Fi та кондиціонер</strong><small>Зручності під час поїздки</small></span></div>
+    </div></section>
+    <section class="section directions" id="directions"><div class="container">
+      <div class="section-heading"><div><div class="eyebrow eyebrow--dark"><span></span> НАШІ НАПРЯМКИ</div><h2>Україна ближче до Європи</h2></div><p>Оберіть країну призначення — допоможемо підібрати маршрут і погодити деталі подорожі.</p></div>
+      <div class="country-grid">
+        <article class="country-card country-card--moldova"><span class="flag">🇲🇩</span><div><h3>Молдова</h3><p>Аеропорт Кишинів</p></div><span class="country-arrow">↗</span></article>
+        <article class="country-card"><span class="flag">🇧🇪</span><div><h3>Бельгія</h3><p>Міжнародні поїздки</p></div><span class="country-arrow">↗</span></article>
+        <article class="country-card"><span class="flag">🇳🇱</span><div><h3>Нідерланди</h3><p>Міжнародні поїздки</p></div><span class="country-arrow">↗</span></article>
+        <article class="country-card"><span class="flag">🇵🇱</span><div><h3>Польща</h3><p>Міжнародні поїздки</p></div><span class="country-arrow">↗</span></article>
+        <article class="country-card"><span class="flag">🇦🇹</span><div><h3>Австрія</h3><p>Міжнародні поїздки</p></div><span class="country-arrow">↗</span></article>
+        <article class="country-card"><span class="flag">🇨🇿</span><div><h3>Чехія</h3><p>Міжнародні поїздки</p></div><span class="country-arrow">↗</span></article>
+        <article class="country-card"><span class="flag">🇨🇭</span><div><h3>Швейцарія</h3><p>Міжнародні поїздки</p></div><span class="country-arrow">↗</span></article>
+        <article class="country-card"><span class="flag">🇩🇰</span><div><h3>Данія</h3><p>Міжнародні поїздки</p></div><span class="country-arrow">↗</span></article>
+        <article class="country-card"><span class="flag">🇩🇪</span><div><h3>Німеччина</h3><p>Міжнародні поїздки</p></div><span class="country-arrow">↗</span></article>
+      </div>
+      <div class="section-note"><span>i</span> Маєте потрібний напрямок? Залиште заявку — допоможемо узгодити деталі.</div>
+    </div></section>
+    <section class="section fleet" id="fleet"><div class="container fleet__layout">
+      <div class="fleet__copy"><div class="eyebrow"><span></span> ТРАНСПОРТ</div><h2>Комфорт для<br>кожної подорожі</h2><p>Для поїздок доступні комфортні мікроавтобуси та пасажирські автобуси. Підберемо транспорт відповідно до маршруту та кількості пасажирів.</p>
+        <div class="fleet-types"><div class="fleet-type"><span class="fleet-type__num">01</span><div><h3>Комфортний мікроавтобус</h3><p>До 8 пасажирських місць</p></div><span class="fleet-type__arrow">↗</span></div><div class="fleet-type"><span class="fleet-type__num">02</span><div><h3>Пасажирський автобус</h3><p>До 50 пасажирських місць</p></div><span class="fleet-type__arrow">↗</span></div></div>
+        <a class="text-link" href="#booking">Запитати про транспорт <span>→</span></a>
+      </div>
+      <div class="fleet__image-wrap"><img src="/fleet-poster.webp" alt="Транспорт для міжнародних пасажирських перевезень" loading="lazy"><div class="fleet__image-caption"><span>КОМФОРТ У ДОРОЗІ</span><strong>Зручні поїздки між країнами</strong></div></div>
+    </div></section>
+    <section class="section advantages" id="advantages"><div class="container">
+      <div class="section-heading section-heading--center"><div class="eyebrow eyebrow--dark"><span></span> ПЕРЕВАГИ</div><h2>Продумано для вашої зручності</h2><p>Комфорт і турбота про пасажирів на кожному етапі подорожі.</p></div>
+      <div class="advantages-grid"><article class="advantage-card"><span class="advantage-icon">✦</span><h3>Досвідчені водії</h3><p>Досвід та уважність водіїв — важлива частина комфортної подорожі.</p></article><article class="advantage-card"><span class="advantage-icon">❄</span><h3>Клімат-контроль</h3><p>Комфортна температура в салоні протягом поїздки.</p></article><article class="advantage-card"><span class="advantage-icon">▦</span><h3>Безкоштовне бронювання</h3><p>Залиште заявку онлайн та узгодьте деталі поїздки з менеджером.</p></article><article class="advantage-card"><span class="advantage-icon">⌁</span><h3>Wi-Fi та кондиціонер</h3><p>Wi-Fi, кондиціонер та зручні умови в дорозі.</p></article></div>
+    </div></section>
+    <section class="booking section" id="booking"><div class="container booking__layout">
+      <div class="booking__intro"><div class="eyebrow"><span></span> ОНЛАЙН-ЗАЯВКА</div><h2>Плануєте<br><span>поїздку?</span></h2><p>Заповніть форму — підготуємо повідомлення з деталями поїздки у WhatsApp. Перевірте дані та надішліть його менеджеру.</p><div class="booking__assurance"><span>✓</span><div><strong>Безкоштовне бронювання</strong><small>Менеджер зв’яжеться з вами для підтвердження деталей.</small></div></div><div class="booking__direct"><small>Потрібна консультація?</small><a href="tel:+380979327977">+380 97 932 79 77</a></div></div>
+      <form class="booking-form" id="booking-form">
+        <div class="form-heading"><div><span>01 / ЗАПОВНІТЬ ДАНІ</span><h3>Залишити заявку</h3></div><span class="form-heading__mark">UA<span>→</span>EU</span></div>
+        <div class="form-grid">
+          <label class="field field--full" id="route-field" hidden><span>Готовий маршрут</span><select name="route_id" id="route-id"><option value="">Оберіть маршрут</option></select></label>
+          <label class="field field--full"><span>Країна призначення</span><select name="country" required><option value="" disabled selected>Оберіть країну</option><option>Молдова — аеропорт Кишинів</option><option>Бельгія</option><option>Нідерланди</option><option>Польща</option><option>Австрія</option><option>Чехія</option><option>Швейцарія</option><option>Данія</option><option>Німеччина</option></select></label>
+          <label class="field"><span>Місто відправлення</span><input name="from" type="text" placeholder="Наприклад, Київ" required></label>
+          <label class="field"><span>Місто прибуття</span><input name="to" type="text" placeholder="Вкажіть місто" required></label>
+          <label class="field"><span>Бажана дата</span><input name="date" id="travel-date" type="date" required></label>
+          <label class="field"><span>Бажаний час</span><select name="time"><option value="Не має значення">Не має значення</option><option>Ранок</option><option>День</option><option>Вечір</option><option>Ніч</option></select></label>
+          <label class="field"><span>Кількість пасажирів</span><select name="passengers" required><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9+</option></select></label>
+          <label class="field"><span>Ваше ім’я</span><input name="name" type="text" placeholder="Як до вас звертатися?" required></label>
+          <label class="field"><span>Номер телефону</span><input name="phone" type="tel" placeholder="+380 ..." required></label>
+          <label class="field field--full"><span>Додаткова інформація <em>(необов’язково)</em></span><textarea name="details" rows="3" placeholder="Зворотний маршрут, багаж або інші побажання"></textarea></label>
+        </div>
+        <label class="consent"><input type="checkbox" required><span>Погоджуюся на використання контактних даних для відповіді на мою заявку.</span></label>
+        <label class="field field--trap" aria-hidden="true"><span>Компанія</span><input name="company" type="text" tabindex="-1" autocomplete="off"></label>
+        <button class="button button--gold button--submit" type="submit">Надіслати у WhatsApp <span>↗</span></button>
+        <p class="form-footnote">Після натискання відкриється WhatsApp із готовим повідомленням. Перевірте його та натисніть «Надіслати».</p><div class="form-message" id="form-message" role="status" aria-live="polite"></div>
       </form>
-      <div class="login-panel-foot">© <span id="login-year"></span> Україна — Європа</div>
-    </div>
-  </div>
-
-  <div class="app-shell is-hidden" id="app-shell">
-    <aside class="sidebar" id="sidebar">
-      <a class="side-brand" href="/" aria-label="На сайт">
-        <div class="brand-mark">UA<span>→</span>EU</div>
-        <div><b>УКРАЇНА — ЄВРОПА</b><small>CRM WORKSPACE</small></div>
-      </a>
-      <div class="side-divider"></div>
-      <div class="side-label">РОБОЧИЙ ПРОСТІР</div>
-      <nav class="side-nav" id="side-nav">
-        <button class="nav-item is-active" data-view="dashboard"><span class="nav-symbol">▦</span> Огляд <kbd>01</kbd></button>
-        <button class="nav-item" data-view="bookings"><span class="nav-symbol">▤</span> Бронювання <kbd id="new-bookings-count">0</kbd></button>
-        <button class="nav-item" data-view="finances"><span class="nav-symbol">₴</span> Фінанси</button>
-        <button class="nav-item" data-view="trips"><span class="nav-symbol">↗</span> Рейси</button>
-        <button class="nav-item" data-view="routes"><span class="nav-symbol">⌖</span> Маршрути</button>
-        <button class="nav-item" data-view="customers"><span class="nav-symbol">♙</span> Клієнти</button>
-        <div class="side-label side-label--spaced">РЕСУРСИ</div>
-        <button class="nav-item" data-view="vehicles"><span class="nav-symbol">▰</span> Транспорт</button>
-        <button class="nav-item" data-view="drivers"><span class="nav-symbol">♧</span> Водії</button>
-      </nav>
-      <div class="sidebar-bottom">
-        <div class="support-card"><span class="support-orb">✦</span><b>Потрібна допомога?</b><small>Технічний супровід проєкту</small><span class="support-note">Команда підтримки BotForge</span></div>
-        <div class="side-user"><div class="avatar" id="user-avatar">М</div><div class="side-user-info"><b id="user-name">Менеджер</b><small id="user-role">Команда</small></div><button class="logout-icon" id="logout-btn" title="Вийти із системи">↪</button></div>
-      </div>
-    </aside>
-
-    <main class="main-area">
-      <header class="topbar">
-        <button class="mobile-menu" id="mobile-menu" aria-label="Відкрити меню" aria-expanded="false" aria-controls="sidebar">☰</button>
-        <div class="breadcrumbs"><span>UA — EU</span><i>/</i><b id="breadcrumb-title">Огляд</b></div>
-        <div class="topbar-actions">
-          <span class="system-live"><i></i> Система активна</span>
-          <button class="icon-btn" id="refresh-btn" title="Оновити дані">↻</button>
-          <div class="topbar-date" id="topbar-date"></div>
-        </div>
-      </header>
-      <div class="view-wrap">
-        <div class="config-warning is-hidden" id="config-warning"></div>
-        <div class="view-heading">
-          <div><div class="eyebrow" id="view-kicker">КОНТРОЛЬ БІЗНЕСУ</div><h1 id="view-title">Огляд</h1><p id="view-description">Ключові показники та останні події у вашій системі.</p></div>
-          <div class="heading-actions" id="heading-actions"></div>
-        </div>
-        <section id="view-content" aria-live="polite"><div class="loading-state"><span class="spinner"></span> Завантаження даних…</div></section>
-      </div>
-      <footer class="app-footer"><span>UA — EU · CRM</span><span>Операційна система перевізника</span><span id="footer-version">Version 1.0</span></footer>
-    </main>
-  </div>
-
-  <div class="modal-backdrop is-hidden" id="modal-backdrop">
-    <div class="modal-card" id="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <div class="modal-head"><div><span class="eyebrow" id="modal-kicker">КЕРУВАННЯ</span><h2 id="modal-title">Нова заявка</h2></div><button class="modal-close" id="modal-close" aria-label="Закрити">×</button></div>
-      <form id="modal-form"><div class="modal-body" id="modal-body"></div><div class="modal-actions" id="modal-actions"><button type="button" class="ghost-btn" id="modal-cancel">Скасувати</button><button type="submit" class="primary-btn" id="modal-save">Зберегти зміни <span>→</span></button></div></form>
-    </div>
-  </div>
-  <div class="toast-region" id="toast-region" aria-live="polite"></div>
-</body>
-</html>
+    </div></section>
+    <section class="about section" id="about"><div class="container about__layout">
+      <div class="about__visual"><img src="/destinations-poster.webp" alt="Міжнародні пасажирські перевезення Україна — Європа" loading="lazy"><span class="about__visual-tag">УКРАЇНА — ЄВРОПА</span></div>
+      <div class="about__copy"><div class="eyebrow eyebrow--dark"><span></span> ПРО ПЕРЕВІЗНИКА</div><h2>Дорога, що<br><span>об’єднує країни</span></h2><p>Організовуємо міжнародні пасажирські перевезення між Україною та країнами Європи. Допомагаємо обрати напрямок, узгодити деталі подорожі та зробити бронювання зручним.</p><p>Зв’яжіться з нами — відповімо на запитання та допоможемо спланувати вашу поїздку.</p><a class="button button--dark" href="#booking">Запитати про поїздку <span>↗</span></a></div>
+    </div></section>
+    <section class="contact-band" id="contacts"><div class="container contact-band__inner"><div><div class="eyebrow"><span></span> МИ НА ЗВ’ЯЗКУ</div><h2>Залишилися запитання?</h2><p>Зателефонуйте або напишіть нам у зручний месенджер.</p></div><div class="contact-actions"><a href="tel:+380979327977" class="contact-phone"><small>Основний номер</small><strong>+380 97 932 79 77</strong></a><a href="tel:+380637022336" class="contact-phone"><small>Додатковий номер</small><strong>+380 63 702 23 36</strong></a><div class="messenger-links"><a href="https://wa.me/380979327977" target="_blank" rel="noopener">WhatsApp ↗</a><a href="viber://chat?number=%2B380979327977">Viber ↗</a></div></div></div></section>
+  </main>
+  <footer class="footer"><div class="container footer__inner"><a class="brand brand--footer" href="#top"><span class="brand__mark brand__mark--image"><img src="/cheetah-mark.png" alt=""></span><span class="brand__text"><strong>УКРАЇНА <em>—</em> ЄВРОПА</strong><small>ПАСАЖИРСЬКІ ПЕРЕВЕЗЕННЯ</small></span></a><p>Міжнародні пасажирські перевезення</p><a class="back-top" href="#top">На початок ↑</a></div><div class="container footer__bottom"><span>© <span id="year"></span> Усі права захищені.</span><span>Підберемо маршрут для вашої подорожі.</span></div></footer>
+  <a class="floating-whatsapp" href="https://wa.me/380979327977" target="_blank" rel="noopener" aria-label="Написати у WhatsApp"><span>✆</span></a>
+  <script src="/script.js"></script>
+</body></html>
